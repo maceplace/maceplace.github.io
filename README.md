@@ -1,2 +1,2 @@
-# Link: https://maceplace.github.io/
-# Or: https://macestudios.ru/
+# Link: https://macestudios.ru/
+Or: https://maceplace.github.io/
