@@ -2,7 +2,7 @@
 * {
     border-radius: 15px;
     user-select: none;
-    font-size: 1em;
+    font-size: 20px;
     /*outline: none;*/
 }
 body {
@@ -18,9 +18,13 @@ header, footer, section {
 }
 a {
     color: #3278FF;
-    font-weight: bold;
     text-decoration: none;
-    transition: 0.1s;
+}
+a:hover {
+    text-decoration: underline;
+}
+header a, header a:hover {
+    text-decoration: none;
 }
 
 
@@ -64,13 +68,9 @@ header {
 
 /* Footer */
 footer { 
-    height: auto;
     padding: 30px 30px;
     background: linear-gradient(to left, #0000, #232769 20%, #232769 80%, #0000);
     border-radius: 0;
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
     margin-top: 60px;
 }
 
@@ -92,16 +92,17 @@ section.hero {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: auto;
     align-content: start
   }
 section.hero-item {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     margin: 10px;
 }
 #hero-heading {
     align-content: start;
+    text-align: left;
 }
 
 
@@ -111,7 +112,7 @@ section.projects {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: auto;
     align-content: start;
     gap: 15px;
@@ -119,7 +120,7 @@ section.projects {
 div.projects-item {
     width: 360px;
     height: 360px;
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     margin: 0;
     background-image: url("assets/Screenshot.jpg");
     background-size: cover;
@@ -127,6 +128,7 @@ div.projects-item {
     box-shadow: 0px 0px 0px rgba(0,0,0,0);
 }
 div.projects-item:hover {
-    transform: rotate(2deg) scale(1.1, 1.1);
+    transform: scale(1.08, 1.08);
     box-shadow: 0px 8px 24px rgba(0,0,0,0.5);
+    /* filter: blur(10px) brightness(0.6); */
 }
