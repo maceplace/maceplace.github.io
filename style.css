@@ -6,7 +6,7 @@
 }
 * {
     border-radius: 15px;
-    user-select: none;
+    /* user-select: none; */
     font-size: 20px;
     /*outline: none;*/
 }
@@ -64,6 +64,14 @@ button:hover, button:active {
     background: var(--primary);
     box-shadow: 0 0 var(--primary);
     transform: translateY(0);
+    cursor: pointer;
+}
+button:disabled {
+    background: #64667e;
+    box-shadow: 0 0 #393847;
+    transform: translateY(0);
+    text-decoration: line-through;
+    cursor: no-drop;
 }
 
 
