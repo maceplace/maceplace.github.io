@@ -24,7 +24,7 @@ header, footer, section {
     padding: 15px 30px;
 }
 p {
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -71,7 +71,7 @@ button:hover, button:active {
 /* Bg animation */
 body {
     /* background-image: radial-gradient(#232452, var(--background)); */
-    background: linear-gradient(90deg, hsl(200, 30%, 15%), hsl(220, 40%, 15%), hsl(260, 50%, 15%)); /*  */
+    background: linear-gradient(90deg, hsl(210, 40%, 13%), hsl(250, 50%, 16%));
     background-repeat: no-repeat;
     background-size: 400% 400%;
 
@@ -79,14 +79,11 @@ body {
 }
 
 @keyframes gradient {
-    0% {
+    0%, 100% {
       background-position-x: 0%;
     }
     50% {
       background-position-x: 100%;
-    }
-    100% {
-      background-position-x: 0%;
     }
 }
 
@@ -115,7 +112,6 @@ header {
     transform: rotate(1turn);
 }
 
-/* Footer */
 .header-socials {
     margin: auto 0 auto auto;
 }
@@ -130,13 +126,13 @@ header {
 /* Footer */
 footer { 
     padding: 30px 30px;
-    background: linear-gradient(90deg, #0000, #4952ff55 20%, #4952ff55 80%, #0000);
+    background: linear-gradient(90deg, #0000, #4951FF44 20%, #4951FF44 80%, #0000);
     border-radius: 0;
     margin-top: 60px;
 }
 footer h1 {
     margin-top: 0;
-    text-align: left;
+    text-align: justify;
     font-size: 40px;
 }
 
@@ -198,7 +194,6 @@ div.projects-item {
 div.projects-item:hover {
     transform: scale(1.08, 1.08);
     box-shadow: 0px 8px 24px rgba(0,0,0,0.5);
-    /* filter: blur(10px) brightness(0.6); */
 }
 
 
@@ -216,12 +211,23 @@ section.buttons {
 
 
 
-/* Section: Custom BGs */
-section.pcboy-bg {
-    background-image: url(assets/MyProjects/PcBoy5Cover.jpg);
-    background-position: center;
+/* Section: Covers */
+section.cover {
+    max-width: none;
+    margin: 0 auto;
+    padding: 15px 30px;
+
+    background-position: bottom;
+    background-attachment: fixed;
     background-size: cover;
     padding: 60px 0;
+    border-radius: 0;
+}
+section.cover p {
+    text-align: center;
+}
+#cover-pcboy {
+    background-image: url('assets/MyProjects/PcBoy5Cover.jpg');
 }
 .readable-shadow {
     text-shadow: 0 0px 32px #000f;
