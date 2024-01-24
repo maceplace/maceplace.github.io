@@ -12,9 +12,7 @@
 }
 body {
     margin: 0px;
-
     /* background-image: radial-gradient(#232452, var(--background)); */
-
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -25,6 +23,10 @@ header, footer, section {
 }
 p {
     text-align: left;
+}
+.no-wrap-text {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
 }
 
 
