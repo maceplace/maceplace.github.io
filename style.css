@@ -239,6 +239,9 @@ section.cover p {
 #cover-pcboy {
     background-image: url('assets/MyProjects/PcBoy5Cover.jpg');
 }
+#cover-tuc {
+    background-image: url('assets/MyProjects/TucCover.jpg');
+}
 .readable-shadow {
     text-shadow: 0 0px 32px #000f;
 }
