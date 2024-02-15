@@ -1,5 +1,5 @@
 #board {
-    background-color: rgb(255, 180, 170) !important;
+    background-color: rgb(152, 188, 255) !important;
 }
 
 .right-answer {
@@ -7,5 +7,5 @@
     opacity: 100 !important;
     background-color: #a0ffb0 !important;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
 }
