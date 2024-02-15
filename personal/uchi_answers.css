@@ -1,9 +1,9 @@
 #board {
-    background-color: rgb(255, 180, 170);
+    background-color: rgb(255, 180, 170) !important;
 }
 
 .right-answer {
-    height: auto;
-    opacity: 100;
-    background-color: #a0ffb0;
+    height: auto !important;
+    opacity: 100 !important;
+    background-color: #a0ffb0 !important;
 }
