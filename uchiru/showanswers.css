@@ -1,11 +1,11 @@
 #board {
-    background-color: rgb(152, 188, 255) !important;
+    background-color: #8cf !important;
 }
 
 .right-answer {
     height: auto !important;
     opacity: 100 !important;
-    background-color: #a0ffb0 !important;
+    background-color: #8f9 !important;
     border-radius: 10px;
     padding: 20px;
 }
