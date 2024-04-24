@@ -12,7 +12,7 @@
 }
 body {
     margin: 0px;
-    /* background-image: radial-gradient(#232452, var(--background)); */
+    background: var(--background);
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -27,6 +27,26 @@ p {
 .no-wrap-text {
     white-space: nowrap; /* Отменяем перенос текста */
     overflow: hidden; /* Обрезаем содержимое */
+}
+
+.bg-blur-ball {
+    width: 700px;
+    height: 700px;
+    border-radius: 700px;
+
+    background-color: #22274B;
+    filter: blur(320px);
+
+    position: fixed;
+    z-index: -50;
+}
+#bg-blur-ball1 {
+    top: 0px;
+    left: 0px;
+}
+#bg-blur-ball2 {
+    bottom: 0px;
+    right: 0px;
 }
 
 
@@ -79,14 +99,16 @@ button:disabled {
 
 
 /* Bg animation */
+/*
 body {
-    /* background-image: radial-gradient(#232452, var(--background)); */
+    background-image: radial-gradient(#232452, var(--background));
     background: linear-gradient(90deg, hsl(250, 50%, 16%), hsl(210, 40%, 13%));
     background-repeat: no-repeat;
     background-size: 400% 400%;
 
-    /* animation: gradient 10s ease infinite; */
+    animation: gradient 10s ease infinite;
 }
+*/
 
 /*
 @keyframes gradient {
