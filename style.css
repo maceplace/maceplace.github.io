@@ -1,8 +1,12 @@
 /* Whole page, and main stuff */
 :root {
     --primary: #4951FF;
-    --link: #25A8FF;
+    --link: #3abaff;
     --background: #12162A;
+    --SyrupBg1: #2C2340;
+    --SyrupBg2: #092B41;
+    --SyrupBg3: #132F21;
+    --SyrupBgM: #0087D019;
 }
 * {
     border-radius: 20px;
@@ -12,11 +16,12 @@
 }
 body {
     margin: 0px;
-    background: var(--background);
+    /* background: var(--background); */
+    background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2), var(--SyrupBg3));
     font-family: 'Roboto', sans-serif;
     color: white;
 }
-header, footer, section {
+header, section {
     max-width: 1280px;
     margin: 0 auto;
     padding: 15px 30px;
@@ -34,8 +39,8 @@ p {
     height: 700px;
     border-radius: 700px;
 
-    background-color: #22274B;
-    filter: blur(320px);
+    background-color: var(--SyrupBgM);
+    filter: blur(350px);
 
     position: fixed;
     z-index: -50;
@@ -155,14 +160,18 @@ header {
     padding: 0;
     margin: 5px;
     border-radius: 0;
+    user-select: none;
 }
 
 /* Footer */
 footer { 
     padding: 30px 30px;
-    background: linear-gradient(90deg, #0000, #4951FF44 20%, #4951FF44 80%, #0000);
+    /* background: linear-gradient(90deg, #0000, #4951FF44 20%, #4951FF44 80%, #0000); */
+    background: #0006;
     border-radius: 0;
     margin-top: 60px;
+
+    padding: 30px calc(50vw - 640px) 30px;
 }
 footer h1 {
     margin-top: 0;
