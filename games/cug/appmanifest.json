@@ -1,0 +1,17 @@
+{
+	"name": "Cookie Ungain",
+	"short_name": "Cookie Ungain",
+	"description": "Game description",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "landscape",
+	"background_color": "#63c74d",
+	"icons": [
+		{
+			"src": "icons/icon-16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		}
+	],
+	"screenshots": []
+}
