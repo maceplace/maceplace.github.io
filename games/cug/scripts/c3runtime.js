@@ -5893,27 +5893,6 @@ x1,y1,w,h,0,0,w,h);return tmpCanvas}GetImageWidth(){return this._imageWidth}GetI
 }
 
 {
-'use strict';{const C3=self.C3;const DOM_COMPONENT_ID="video";function MaybeCloseImageBitmap(imageBitmap){if(imageBitmap&&imageBitmap["close"])imageBitmap["close"]()}C3.Plugins.video=class VideoPlugin extends C3.SDKDOMPluginBase{constructor(opts){super(opts,DOM_COMPONENT_ID);this._postImageBitmaps=false;this._supportedFormats={};this._lastStateSequenceNumber=-1;this._videoState=new Map;this._runtime.AddLoadPromise(this._runtime.PostComponentMessageToDOMAsync("video","init",{"isInWorker":this._runtime.IsInWorker()}).then(result=>
-{this._postImageBitmaps=result["postImageBitmaps"];this._supportedFormats=result["supportedFormats"]}));this.AddElementMessageHandler("playback-event",(sdkInst,e)=>sdkInst._OnPlaybackEvent(e));this._runtime.AddDOMComponentMessageHandler(DOM_COMPONENT_ID,"state",e=>this._OnUpdateState(e))}Release(){super.Release()}IsPostImageBitmapsMode(){return this._postImageBitmaps}IsFormatSupported(format){return!!this._supportedFormats[format]}_OnUpdateState(stateData){const sequenceNumber=stateData["sequenceNumber"];
-if(sequenceNumber<=this._lastStateSequenceNumber){for(const o of Object.values(stateData["videoData"]))MaybeCloseImageBitmap(o["imageBitmap"]);return}this._lastStateSequenceNumber=sequenceNumber;for(const o of this._videoState.values())MaybeCloseImageBitmap(o["imageBitmap"]);this._videoState.clear();for(const [idStr,o]of Object.entries(stateData["videoData"]))this._videoState.set(parseInt(idStr,10),o)}_DeleteVideoState(elementId){this._videoState.delete(elementId)}GetVideoState(elementId){return this._videoState.get(elementId)||
-null}}}{const C3=self.C3;C3.Plugins.video.Type=class VideoType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
-{const C3=self.C3;const tempRect=C3.New(C3.Rect);const tempQuad=C3.New(C3.Quad);const DOM_COMPONENT_ID="video";C3.Plugins.video.Instance=class VideoInstance extends C3.SDKDOMInstanceBase{constructor(inst,properties){super(inst,DOM_COMPONENT_ID);this._webm_src="";this._mp4_src="";this._autoplay=2;this._playInBackground=false;this._videoWasPlayingOnSuspend=false;this._webGLTexture=null;this._currentTrigger=-1;this._isSettingSource=0;this._isPlaying=false;this._isPaused=false;this._hasEnded=false;this._isLooping=
-false;this._isMuted=false;this._volume=0;if(properties){this._webm_src=properties[0];this._mp4_src=properties[1];this._autoplay=properties[2];this._playInBackground=properties[3];this.GetWorldInfo().SetVisible(properties[4])}const rt=this._runtime.Dispatcher();this._disposables=new C3.CompositeDisposable(C3.Disposable.From(rt,"renderercontextlost",()=>this._OnRendererContextLost()),C3.Disposable.From(rt,"suspend",()=>this._OnSuspend()),C3.Disposable.From(rt,"resume",()=>this._OnResume()));this.CreateElement({"src":this.GetVideoSource(),
-"autoplay":this._autoplay})}Release(){this.GetPlugin()._DeleteVideoState(this.GetElementId());this._ReleaseTexture();super.Release()}_MaybeCreateTexture(renderer,w,h){if(this._webGLTexture)if(this._webGLTexture.GetWidth()===w||this._webGLTexture.GetHeight()===h)return;else this._ReleaseTexture();this._webGLTexture=renderer.CreateDynamicTexture(w,h,{sampling:this._runtime.GetSampling(),mipMap:false})}_ReleaseTexture(){if(!this._webGLTexture)return;this._runtime.GetRenderer().DeleteTexture(this._webGLTexture);
-this._webGLTexture=null}GetElementState(){return{}}DbToLinearNoCap(x){return Math.pow(10,x/20)}DbToLinear(x){const v=this.DbToLinearNoCap(x);if(!isFinite(v))return 0;return Math.max(Math.min(v,1),0)}LinearToDbNoCap(x){return Math.log(x)/Math.log(10)*20}LinearToDb(x){return this.LinearToDbNoCap(Math.max(Math.min(x,1),0))}GetVideoSource(){let src="";const plugin=this.GetPlugin();if(plugin.IsFormatSupported("video/webm")&&this._webm_src)src=this._webm_src;else if(plugin.IsFormatSupported("video/mp4")&&
-this._mp4_src)src=this._mp4_src;if(!src)return src;if(C3.IsRelativeURL(src))return this._runtime.GetAssetManager().GetMediaFileUrl(src);else return src}_OnRendererContextLost(){this._webGLTexture=null}async _OnPlaybackEvent(e){const num=e["type"];if(num===5)this._SetIsPlaying(true);else if(num===2){this._SetIsPlaying(false);this._hasEnded=true;this._isPaused=false}else if(num===6){this._SetIsPlaying(false);this._isPaused=true;this._hasEnded=false}this._currentTrigger=num;await this.TriggerAsync(C3.Plugins.video.Cnds.OnPlaybackEvent)}_SetIsPlaying(p){this._isPlaying=
-!!p;if(this._isPlaying){this._StartTicking();this._isPaused=false;this._hasEnded=false}else this._StopTicking()}_OnSuspend(){if(this._playInBackground)return;if(!this._isPlaying)return;this._videoWasPlayingOnSuspend=true;this.PostToDOMElement("pause")}_OnResume(){if(this._playInBackground)return;if(this._videoWasPlayingOnSuspend){this.PostToDOMElement("play");this._videoWasPlayingOnSuspend=false}}Draw(renderer){const wi=this.GetWorldInfo();let videoWidth=0;let videoHeight=0;let textureData=null;const isPostImageBitmapsMode=
-this.GetPlugin().IsPostImageBitmapsMode();if(isPostImageBitmapsMode){const state=this.GetMyState();if(!state)return;textureData=state["imageBitmap"];state["imageBitmap"]=null;videoWidth=state["videoWidth"];videoHeight=state["videoHeight"]}else{const videoElem=self["C3Video_GetElement"](this.GetElementId());if(!videoElem)return;videoWidth=videoElem.videoWidth;videoHeight=videoElem.videoHeight;textureData=videoElem}if(videoWidth<=0||videoHeight<=0)return;this._MaybeCreateTexture(renderer,videoWidth,
-videoHeight);if(textureData){renderer.UpdateTexture(textureData,this._webGLTexture);if(isPostImageBitmapsMode&&textureData["close"])textureData["close"]()}const videoAspect=videoWidth/videoHeight;const dispWidth=wi.GetWidth();const dispHeight=wi.GetHeight();const dispAspect=dispWidth/dispHeight;let offX=0;let offY=0;let drawWidth=0;let drawHeight=0;if(dispAspect>videoAspect){drawWidth=dispHeight*videoAspect;drawHeight=dispHeight;offX=Math.max(Math.floor((dispWidth-drawWidth)/2),0)}else{drawWidth=
-dispWidth;drawHeight=dispWidth/videoAspect;offY=Math.max(Math.floor((dispHeight-drawHeight)/2),0)}renderer.SetTexture(this._webGLTexture);tempRect.setWH(wi.GetX()+offX,wi.GetY()+offY,drawWidth,drawHeight);tempQuad.setFromRect(tempRect);renderer.Quad(tempQuad)}Tick(){this._runtime.UpdateRender()}GetMyState(){return this.GetPlugin().GetVideoState(this.GetElementId())}}}
-{const C3=self.C3;C3.Plugins.video.Cnds={IsPlaying(){return this._isPlaying},IsPaused(){return this._isPaused},HasEnded(){return this._hasEnded},IsMuted(){return this._isMuted},OnPlaybackEvent(trig){return this._currentTrigger===trig}}}
-{const C3=self.C3;C3.Plugins.video.Acts={SetSource(webmSrc,mp4Src){this._webm_src=webmSrc;this._mp4_src=mp4Src;this.PostToDOMElement("set-source",{"src":this.GetVideoSource()});this._ReleaseTexture()},SetPlaybackTime(s){this.PostToDOMElement("set-playback-time",{"time":s})},SetPlaybackRate(r){this.PostToDOMElement("set-playback-rate",{"rate":r})},SetLooping(l){l=l!==0;if(this._isLooping===l)return;this._isLooping=l;this.PostToDOMElement("set-looping",{"isLooping":l})},SetMuted(m){m=m!==0;if(this._isMuted===
-m)return;this._isMuted=m;this.PostToDOMElement("set-muted",{"isMuted":m})},SetVolume(v){if(this._volume===v)return;this._volume=v;this.PostToDOMElement("set-volume",{"volume":this.DbToLinear(v)})},Pause(){this.PostToDOMElement("pause")},Play(){this._PostToDOMElementMaybeSync("play")}}}
-{const C3=self.C3;C3.Plugins.video.Exps={PlaybackTime(){const state=this.GetMyState();return state?state["currentTime"]:0},PlaybackRate(){const state=this.GetMyState();return state?state["playbackRate"]:1},Duration(){const state=this.GetMyState();return state?state["duration"]:0},Volume(){return this._volume},VideoWidth(){const state=this.GetMyState();return state?state["videoWidth"]:0},VideoHeight(){const state=this.GetMyState();return state?state["videoHeight"]:0}}};
-
-}
-
-{
 'use strict';{const C3=self.C3;C3.Behaviors.Tween=class TweenBehavior extends C3.SDKBehaviorBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Behaviors.Tween.Type=class TweenType extends C3.SDKBehaviorTypeBase{constructor(behaviorType){super(behaviorType)}Release(){super.Release()}OnCreate(){}}}
 {const C3=self.C3;const NAMESPACE=C3.Behaviors.Tween;const ENABLED=0;NAMESPACE.Instance=class TweenInstance extends C3.SDKBehaviorInstanceBase{constructor(behInst,properties){super(behInst);this._allowMultiple=false;this._enabled=true;if(properties){this._allowMultiple=false;this._enabled=!!properties[ENABLED]}this._activeTweens=new Map;this._disabledTweens=[];this._waitingForReleaseTweens=new Map;this._finishingTween=null;this._activeTweensJson=null;this._disabledTweensJson=null;this._waitingForReleaseTweensJson=
 null;this._finishingTweenName="";this._triggerTweens=[];this._afterLoad=e=>this._OnAfterLoad();this.GetRuntime().Dispatcher().addEventListener("afterload",this._afterLoad)}Release(){this.GetRuntime().Dispatcher().removeEventListener("afterload",this._afterLoad);this._afterLoad=null;if(this._finishingTween){this.ReleaseAndCompleteTween(this._finishingTween);this._finishingTween=null}this.ReleaseAndCompleteTweens();this._tweens=null;this.ClearDisabledList();this._disabledTweens=null;this._ReleaseWaitingTweens();
@@ -8030,7 +8009,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Sin,
 		C3.Behaviors.Flash,
 		C3.Plugins.NinePatch,
-		C3.Plugins.video,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
@@ -8073,18 +8051,18 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Spritefont2.Cnds.PickTopBottom,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.Audio.Acts.Play,
-		C3.Plugins.Audio.Acts.SetPlaybackRate,
 		C3.Plugins.Spritefont2.Acts.SetY,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.Spritefont2.Acts.SetDefaultColor,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Cnds.LayerVisible,
+		C3.Plugins.System.Cnds.OnSuspend,
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.Sprite.Acts.MoveToLayer,
 		C3.Plugins.Audio.Acts.AddFilterEffect,
+		C3.Plugins.Audio.Acts.SetPlaybackRate,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Audio.Acts.RemoveEffects,
 		C3.Behaviors.Platform.Acts.SimulateControl,
@@ -8129,6 +8107,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Behaviors.DragnDrop.Acts.SetEnabled,
 		C3.Plugins.Sprite.Exps.Count,
+		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.System.Cnds.PickRandom,
 		C3.Plugins.System.Cnds.PickAll,
 		C3.Plugins.Sprite.Cnds.PickTopBottom,
@@ -8144,6 +8123,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.EvaluateExpression,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Keyboard.Cnds.OnKey,
+		C3.Plugins.System.Exps.timescale,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
 		C3.Plugins.Browser.Acts.CancelFullScreen,
@@ -8152,6 +8132,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.SetSilent,
 		C3.Plugins.Audio.Acts.SetMasterVolume,
 		C3.Plugins.Audio.Exps.MasterVolume,
+		C3.Plugins.Sprite.Exps.dt,
 		C3.Plugins.Dictionary.Cnds.IsEmpty,
 		C3.Plugins.AJAX.Acts.RequestFile,
 		C3.Plugins.LocalStorage.Acts.GetItem,
@@ -8250,11 +8231,12 @@ self.C3_JsPropNameTable = [
 	{MenuMapButton: 0},
 	{Background2: 0},
 	{IntroMaceStudios: 0},
-	{Video: 0},
 	{PauseMid: 0},
+	{ResultsChars: 0},
 	{MenuAllButtons: 0},
 	{MenuSelected: 0},
 	{Counter: 0},
+	{Gamemode: 0},
 	{Timer: 0},
 	{CAMERASPEED: 0},
 	{CameraX: 0},
@@ -8289,7 +8271,8 @@ self.C3_JsPropNameTable = [
 	{Frame: 0},
 	{x: 0},
 	{y: 0},
-	{Special: 0}
+	{Special: 0},
+	{Winner: 0}
 ];
 
 self.InstanceType = {
@@ -8326,8 +8309,8 @@ self.InstanceType = {
 	MenuMapButton: class extends self.IWorldInstance {},
 	Background2: class extends self.ITiledBackgroundInstance {},
 	IntroMaceStudios: class extends self.ISpriteInstance {},
-	Video: class extends self.IWorldInstance {},
 	PauseMid: class extends self.IWorldInstance {},
+	ResultsChars: class extends self.ISpriteInstance {},
 	MenuAllButtons: class extends self.IWorldInstance {}
 }
 }
@@ -8464,23 +8447,23 @@ self.C3_ExpressionFuncs = [
 			return () => ((v0.GetValue() + 2880) % 4);
 		},
 		() => "Versus",
-		() => "Ui/ConfirmSoft",
-		() => 0.1,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
 		() => 960,
 		() => 0.5,
+		() => "Ui/ConfirmSoft",
+		() => 0.1,
 		() => "BackToMenu",
 		() => 320,
 		() => "Coop",
-		() => "Options",
 		() => "Ui/ErrorShort",
 		() => -5,
 		() => "error",
 		() => 3,
 		() => 6,
+		() => "Options",
 		() => "Exit",
 		() => "Ui/ConfirmHard",
 		() => "ExitGame",
@@ -8521,18 +8504,21 @@ self.C3_ExpressionFuncs = [
 			const v2 = p._GetNode(2).GetVar();
 			return () => f0(f1(v2.GetValue(), 0));
 		},
+		() => "P2",
+		() => "Results",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => and((and("C", v0.GetValue()) + "/"), 15);
 		},
 		() => 0.8,
 		() => 15,
-		() => "_Pause",
+		() => "P1",
 		() => "_Restart",
 		() => -281474976711679,
 		() => -281492157629439,
 		() => "Lvl Pause",
 		() => "Pause",
+		() => "_Pause",
 		() => "Lvl Game",
 		() => "Ui",
 		() => "m",
@@ -8540,6 +8526,11 @@ self.C3_ExpressionFuncs = [
 		() => 100,
 		() => 0.6,
 		() => "Unpause",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0("Pause");
+		},
+		() => "OnPause",
 		() => "LvlPlayer",
 		p => {
 			const n0 = p._GetNode(0);
@@ -8664,13 +8655,17 @@ self.C3_ExpressionFuncs = [
 		() => 0.08333333333333333,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => (f0() - (30 * f1()));
+			return () => (f0() * 2);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => (f0() + (30 * f1()));
+			const n1 = p._GetNode(1);
+			return () => (f0() - (30 * n1.ExpObject()));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => (f0() + (30 * n1.ExpObject()));
 		},
 		() => "GameData",
 		() => "Save",
@@ -8784,12 +8779,12 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
-			const f2 = p._GetNode(2).GetBoundMethod();
-			return () => (n0.ExpObject() + (n1.ExpInstVar() * f2()));
+			const n2 = p._GetNode(2);
+			return () => (n0.ExpObject() + (n1.ExpInstVar() * n2.ExpObject()));
 		},
 		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => (500 * f0());
+			const n0 = p._GetNode(0);
+			return () => (500 * n0.ExpObject());
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -8802,7 +8797,14 @@ self.C3_ExpressionFuncs = [
 		() => "blip",
 		() => "BlackTint",
 		() => "Intro",
-		() => "intro"
+		() => "P1W",
+		() => "P2L",
+		() => "ResultsText",
+		() => "[color=#5d5]Игрок 1 ⌨️[/color]\nПобедил!",
+		() => "P1L",
+		() => "P2W",
+		() => "[color=#f87]Игрок 2 🖱️[/color]\nПобедил!",
+		() => "ResultsProceed"
 ];
 
 
