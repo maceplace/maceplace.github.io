@@ -18,7 +18,7 @@ body {
     margin: 0px;
     /* background: var(--background); */
     background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2), var(--SyrupBg3));
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 header, section {
@@ -183,8 +183,9 @@ footer h1 {
 
 /* Section: Separation headline */
 h1 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 64px;
+    font-weight: 700;
     margin: 0;
     margin-top: 60px;
     text-align: center;
