@@ -2,12 +2,12 @@ const resources = {
     en: {
         translation: {
             "Hero Welcome": "Greetings!",
-            "Hero description2": "My name is Ilya Bulava<br>I am an indie game developer, pixel artist, programmer and aspiring musician ",
+            "Hero description": "My name is Ilya Bulava and i am...<ul><li>Indie game developer 🎮</li><li>Certified programmer 💻</li><li>Aspiring composer 🎵</li><li>Pixel Artist 🎨</li></ul>",
 
-            "Hero description": "My name is Ilya Bulava<br>I am an indie game developer, pixel artist, programmer and aspiring musician ",
+            "Section Projects": "My best projects:",
+            "Section Music": "Music that I've made:",
+            "Other Projects": "Old projects",
 
-            "My Awesome Projects": "My Best Projects",
-            "Other Projects": "Other Projects",
             "Contact": "Contact me",
             "Footer-Copyright": "© 2018-2034 Mace Studios. All rights reserved."
         }
@@ -15,12 +15,12 @@ const resources = {
     ru: {
         translation: {
             "Hero Welcome": "Привет!",
-            "Hero description2": "Меня зовут Илья Булава<br>Я инди разработчик игр, пиксельный художник,<br>дипломированный программист и начинающий музыкант",
+            "Hero description": "Меня зовут Илья Булава и я...<ul><li>Инди разработчик игр 🎮</li><li>Дипломированный программист 💻</li><li>Начинающий композитор 🎵</li><li>Художник в пиксель-арте 🎨</li></ul>",
 
-            "Hero description": "Меня зовут Илья Булава<ul><li>Инди разработчик игр</li><li>Дипломированный программист</li><li>Начинающий музыкант</li><li>Пиксельный художник</li></ul>",
+            "Section Projects": "Мои лучшие проекты:",
+            "Section Music": "Музыка, которую я написал:",
+            "Other Projects": "Старые проекты",
 
-            "Section Projects": "Мои Лучшие Проекты",
-            "Other Projects": "Другие Проекты",
             "Contact": "Связаться со мной",
             "Footer-Copyright": "© 2018-2034 Mace Studios. Все права защищены."
         }
@@ -40,6 +40,7 @@ function updateContent() {
     document.getElementById('hero-heading').innerText = i18next.t('Hero Welcome');
     document.getElementById('hero-me-desc').innerHTML = i18next.t('Hero description');
     document.getElementById('Section-Projects').innerText = i18next.t('Section Projects');
+    document.getElementById('Section-Music').innerText = i18next.t('Section Music');
     document.getElementById('Section-OtherProjects').innerText = i18next.t('Other Projects');
     document.getElementById('Section-Contact').innerText = i18next.t('Contact');
     document.getElementById('Footer-Copyright').innerText = i18next.t('Footer-Copyright');
