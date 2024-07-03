@@ -3,10 +3,9 @@
     --primary: #4951FF;
     --link: #3abaff;
     --background: #12162A;
-    --SyrupBg1: #2C2340;
-    --SyrupBg2: #092B41;
-    --SyrupBg3: #132F21;
-    --SyrupBgM: #0087D019;
+    --SyrupBg1: #1e1a44;
+    --SyrupBg2: #14213a;
+    --SyrupBgM: #25242c00;
 }
 * {
     border-radius: 20px;
@@ -17,7 +16,7 @@
 body {
     margin: 0px;
     /* background: var(--background); */
-    background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2), var(--SyrupBg3));
+    background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2));
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
@@ -167,7 +166,7 @@ header {
 footer { 
     padding: 30px 30px;
     /* background: linear-gradient(90deg, #0000, #4951FF44 20%, #4951FF44 80%, #0000); */
-    background: #0006;
+    background: #0005;
     border-radius: 0;
     margin-top: 60px;
 

@@ -2,9 +2,12 @@ const resources = {
     en: {
         translation: {
             "Hero Welcome": "Greetings!",
-            "Hero description": "My name is Ilya Bulava<br>I am an indie game developer, pixel artist, aspiring musician, and programmer",
+            "Hero description2": "My name is Ilya Bulava<br>I am an indie game developer, pixel artist, programmer and aspiring musician ",
+
+            "Hero description": "My name is Ilya Bulava<br>I am an indie game developer, pixel artist, programmer and aspiring musician ",
+
             "My Awesome Projects": "My Best Projects",
-            "Other Projects": "My Other Projects",
+            "Other Projects": "Other Projects",
             "Contact": "Contact me",
             "Footer-Copyright": "© 2018-2034 Mace Studios. All rights reserved."
         }
@@ -12,9 +15,12 @@ const resources = {
     ru: {
         translation: {
             "Hero Welcome": "Привет!",
-            "Hero description": "Меня зовут Илья Булава<br>Я инди разработчик игр, пиксельный художник,<br>начинающий музыкант и программист",
+            "Hero description2": "Меня зовут Илья Булава<br>Я инди разработчик игр, пиксельный художник,<br>дипломированный программист и начинающий музыкант",
+
+            "Hero description": "Меня зовут Илья Булава<ul><li>Инди разработчик игр</li><li>Дипломированный программист</li><li>Начинающий музыкант</li><li>Пиксельный художник</li></ul>",
+
             "Section Projects": "Мои Лучшие Проекты",
-            "Other Projects": "Мои Другие Проекты",
+            "Other Projects": "Другие Проекты",
             "Contact": "Связаться со мной",
             "Footer-Copyright": "© 2018-2034 Mace Studios. Все права защищены."
         }
@@ -24,7 +30,7 @@ const resources = {
 i18next.use(i18nextBrowserLanguageDetector).init({
     resources,
     fallbackLng: 'en',
-    debug: true
+    debug: false
 }, function(err, t) {
     if (err) return console.error(err);
     updateContent();
