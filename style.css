@@ -219,10 +219,10 @@ section.projects {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: auto;
     align-content: start;
-    gap: 15px;
+    gap: 20px;
 }
 div.projects-item {
     width: 300px;
@@ -258,12 +258,11 @@ section.buttons {
 section.cover {
     max-width: none;
     margin: 0 auto;
-    padding: 15px 30px;
+    padding: 80px 0;
 
     background-position: bottom;
     background-attachment: fixed;
     background-size: cover;
-    padding: 60px 0;
     border-radius: 0;
 }
 section.cover p {
@@ -271,6 +270,15 @@ section.cover p {
 }
 #cover-pcboy {
     background-image: url('assets/MyProjects/PcBoy5Cover.jpg');
+}
+#cover-pcboy4 {
+    background-image: url('assets/MyProjects/PcBoy4Cover.jpg');
+}
+#cover-df {
+    background-image: url('assets/MyProjects/DFCover.png');
+}
+#cover-nsn {
+    background-image: url('assets/MyProjects/NSNCover.jpg');
 }
 #cover-tuc {
     background-image: url('assets/MyProjects/TucCover.jpg');
