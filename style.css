@@ -2,7 +2,7 @@
 :root {
     --primary: #4951FF;
     --link: #3abaff;
-    --background: #12162A;
+    --background: #191e3f;
     --SyrupBg1: #1e1a44;
     --SyrupBg2: #14213a;
     --SyrupBgM: #25242c00;
@@ -15,8 +15,8 @@
 }
 body {
     margin: 0px;
-    /* background: var(--background); */
-    background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2));
+    background: var(--background);
+    /* background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2)); */
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
