@@ -6,7 +6,7 @@ const resources = {
 
             "Section Projects": "My best projects:",
             "Section Music": "Music that I've made:",
-            "Other Projects": "Old projects",
+            "Other Projects": "Other projects",
 
             "Contact": "Contact me",
             "Footer-Copyright": "© 2018-2034 Mace Studios. All rights reserved."
@@ -19,7 +19,7 @@ const resources = {
 
             "Section Projects": "Мои лучшие проекты:",
             "Section Music": "Музыка, которую я написал:",
-            "Other Projects": "Старые проекты",
+            "Other Projects": "Другие проекты",
 
             "Contact": "Связаться со мной",
             "Footer-Copyright": "© 2018-2034 Mace Studios. Все права защищены."
