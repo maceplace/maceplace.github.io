@@ -9,7 +9,7 @@ const resources = {
             "Other Projects": "Other projects",
 
             "Contact": "Contact me",
-            "Footer-Copyright": "© 2018-2034 Mace Studios. All rights reserved."
+            "Footer-Copyright": "© 2018-2034 Mace Dev (prev.: Mace Studios). All rights reserved."
         }
     },
     ru: {
@@ -22,7 +22,7 @@ const resources = {
             "Other Projects": "Другие проекты",
 
             "Contact": "Связаться со мной",
-            "Footer-Copyright": "© 2018-2034 Mace Studios. Все права защищены."
+            "Footer-Copyright": "© 2018-2034 Mace Dev (ранее: Mace Studios). Все права защищены."
         }
     }
 };
