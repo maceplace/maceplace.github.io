@@ -2,7 +2,7 @@
 :root {
     --primary: #4951FF;
     --link: #3abaff;
-    --background: #191e3f;
+    --background: #1B1C2E;
     --SyrupBg1: #1e1a44;
     --SyrupBg2: #14213a;
     --SyrupBgM: #25242c00;
@@ -10,15 +10,18 @@
 * {
     border-radius: 20px;
     /* user-select: none; */
-    font-size: 24px;
+    font-size: 22px;
     /*outline: none;*/
 }
 body {
     margin: 0px;
-    background: var(--background);
-    /* background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2)); */
     font-family: 'Montserrat', sans-serif;
     color: white;
+    /*background: var(--background);*/
+    /* background: linear-gradient(135deg, var(--SyrupBg1), var(--SyrupBg2)); */
+    background: var(--background);
+    background-image: url("assets/BgChecker.png");
+    background-attachment: fixed;
 }
 header, section {
     max-width: 1280px;
@@ -76,7 +79,7 @@ button {
     transform: translateY(-0.2em);
 
     color: #fff;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1em;
 
     margin: 1em;
@@ -129,17 +132,17 @@ body {
 
 /* Header */
 header { 
-    height: 80px;
+    height: 100px;
     padding: 30px 30px;
     display: flex;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 20px;
 }
 .header-logo {
     display: contents;
 }
 .header-logo-text {
-    font-size: 40px;
+    font-size: 2em;
     margin: auto 0;
 }
 
@@ -175,7 +178,7 @@ footer {
 footer h1 {
     margin-top: 0;
     text-align: justify;
-    font-size: 40px;
+    font-size: 2em;
 }
 
 
@@ -183,8 +186,8 @@ footer h1 {
 /* Section: Separation headline */
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 3em;
+    font-weight: 600;
     margin: 0;
     margin-top: 60px;
     text-align: center;
@@ -245,6 +248,11 @@ div.projects-item-small {
 .other-projs-mini-icon {
     height: 24px;
     border-radius: 3px;
+}
+mini-section {
+    font-size: 1.6em;
+    font-weight: 450;
+    color: #fff;
 }
 
 
