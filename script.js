@@ -15,7 +15,7 @@ const resources = {
     ru: {
         translation: {
             "Hero Welcome": "Привет!",
-            "Hero description": "Меня зовут Илья Булава и я...<ul><li><i class=\"bi bi-controller\"></i> Инди разработчик игр </li><li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li><li><i class=\"bi bi-music-note-list\"></i> Начинающий <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ&si=9KVATVSow4IrW_Ql\">композитор</a> </li><li><i class=\"bi bi-palette\"></i> Художник в пиксель-арте </li></ul>",
+            "Hero description": "Меня зовут Илья Булава и я...<ul><li><i class=\"bi bi-controller\"></i> Инди <a target=\"_blank\" href=\"https://bulava.itch.io/\">разработчик игр</a> </li><li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li><li><i class=\"bi bi-music-note-list\"></i> Начинающий <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ&si=9KVATVSow4IrW_Ql\">композитор</a> </li><li><i class=\"bi bi-palette\"></i> Художник в пиксель-арте </li></ul>",
 
             "Section Projects": "Мои лучшие проекты:",
             "Section Music": "Музыка, которую я написал:",
