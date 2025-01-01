@@ -1,15 +1,15 @@
 const resources = {
     en: {
         translation: {
-            "Hero Welcome": "Greetings!",
+            "Hero Welcome": "Hello!",
             "Hero description": "My name is Ilya Bulava and i am...<ul><li>Indie game developer 🎮</li><li>Certified programmer 💻</li><li>Aspiring composer 🎵</li><li>Pixel Artist 🎨</li></ul>",
 
-            "Section Projects": "My best projects:",
-            "Section Music": "Music that I've made:",
+            "Section Projects": "My best projects",
+            "Section Music": "Music I've made",
             "Other Projects": "Other projects",
 
             "Contact": "Contact me",
-            "Footer-Copyright": "© 2018-2034 Mace Dev (prev.: Mace Studios). All rights reserved."
+            "Footer-Copyright": "© 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved."
         }
     },
     ru: {
@@ -17,12 +17,12 @@ const resources = {
             "Hero Welcome": "Привет!",
             "Hero description": "Меня зовут Илья Булава и я...<ul><li><i class=\"bi bi-controller\"></i> Инди <a target=\"_blank\" href=\"https://bulava.itch.io/\">разработчик игр</a> </li><li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li><li><i class=\"bi bi-music-note-list\"></i> Начинающий <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ&si=9KVATVSow4IrW_Ql\">композитор</a> </li><li><i class=\"bi bi-palette\"></i> Художник в пиксель-арте </li></ul>",
 
-            "Section Projects": "Мои лучшие проекты:",
-            "Section Music": "Музыка, которую я написал:",
+            "Section Projects": "Мои проекты",
+            "Section Music": "Моя музыка",
             "Other Projects": "Другие проекты",
 
             "Contact": "Связаться со мной",
-            "Footer-Copyright": "© 2018-2034 Mace Dev (ранее: Mace Studios). Все права защищены."
+            "Footer-Copyright": "© 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены."
         }
     }
 };

@@ -2,37 +2,40 @@
 <html>
 <head>
 
-
-
-<title>Mace Dev</title>
-
+<!-- Setup -->
 <meta charset="utf-8">
-
-<meta name="description" content="Mace Dev. My portfolio website">
-<meta name="keywords" content="Gamedev, Ilya Bulava, Илья Булава, Make meis maze mace studios, mace dev, MaceDev, ПкБой">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Page info -->
+<title>Mace Dev</title>
+<meta name="description" content="Mace Dev. My portfolio website">
+<meta name="keywords" content="Ilya Bulava, Илья Булава, Make meis maze, Mace Studios, Mace Dev, MaceDev">
+<link rel="icon" href="/assets/logo/IconWeb.png" type="image/png">
+
+<!-- Metadata -->
 <meta property="og:title" content="Mace Dev">
+<meta property="og:site_name" content="Mace Dev">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://macestudios.ru/">
 <meta property="og:image" content="assets/logo/IconCircle.svg">
 <meta property="og:description" content="Mace Dev. My portfolio website">
-<meta property="og:site_name" content="Mace Dev">
-
 <meta content="#4951FF" data-react-helmet="true" name="theme-color">
 
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit&family=Roboto&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-<link rel="icon" href="/assets/logo/IconWeb.png" type="image/png">
+<!-- Connect Style -->
 <link rel="stylesheet" href="/style.css">
 
+<!-- Language Script -->
 <script src="https://unpkg.com/i18next@21.6.5/dist/umd/i18next.min.js"></script>
 <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="/script.js" defer></script>
+<script src="/language.js" defer></script>
 
 </head>
 <body>
@@ -40,31 +43,30 @@
 
 
 <header>
+  <!-- Logo -->
   <div class="header-logo">
     <a class="header-logo-icon" href="https://macestudios.ru/">
       <img src="assets/logo/IconCircle.svg" height="100px">
     </a>
     <h1 class="header-logo-text">Mace Dev</h1>
   </div>
-</header>
-
-<!--
-<div class="header-socials">
-    <a class="header-item" href="https://www.tiktok.com/@macestudiosgames" target="_blank">
+  <!-- Socials -->
+  <div class="header-socials">
+    <!-- <a class="header-item" href="https://www.tiktok.com/@macestudiosgames" target="_blank">
       <img src="assets/branding/tiktok-logo.svg" title="TikTok">
-    </a>
-    <a class="header-item" href="https://www.youtube.com/@MacePlace" target="_blank" >
+    </a> -->
+    <a class="header-item" href="https://www.youtube.com/@macedev" target="_blank" >
       <img src="assets/branding/yt-logo.svg" title="YouTube">
     </a>
-    <a class="header-item" href="https://vk.com/macestudios" target="_blank">
+    <a class="header-item" href="https://vk.com/macedev" target="_blank">
       <img src="assets/branding/vk-logo.svg" title="VKontakte">
     </a>
   </div>
--->
+</header>
 
-<!-- bg -->
-<div class="bg-blur-ball" id="bg-blur-ball1"></div>
-<div class="bg-blur-ball" id="bg-blur-ball2"></div>
+
+
+
 
 <!-- Hero -->
 <section class="hero">
@@ -73,7 +75,7 @@
     <p id="hero-me-desc">My name is Ilya Bulava<br>
     I am an indie game developer, pixel artist, aspiring musician, and programmer</p>
   </div>
-  <img class="hero-item" src="assets/HeroEverything.png" height="380px">
+  <img class="hero-item hero-image" src="assets/HeroEverything.png">
 </section>
 
 
@@ -113,11 +115,13 @@
 <!-- Music -->
 <section>
   <h1 id="Section-Music">Music</h1>
-  <p style="text-align: center;">(Весь плейлист)</p>
+  <!-- <p style="text-align: center;">(Весь плейлист)</p> -->
 </section>
 
 <section style="text-align: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=als6LfhfIp0mg7ke&amp;list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="560px" height="315px" class="embed" src="https://www.youtube.com/embed/videoseries?si=als6LfhfIp0mg7ke&amp;list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ"
+  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </section>
 
 
@@ -172,14 +176,16 @@
 
 <!-- Footer -->
 <footer>
-  <h1 id="Section-Contact">Contact me:</h1>
-  <img src="assets/branding/bi-vk.svg" style="border-radius: 0px;"> <a title="VKontakte" href="https://vk.com/MaceDev" target="_blank">vk.com/MaceDev</a><br>
-  <i class="bi bi-youtube"></i> <a title="YouTube" href="https://www.youtube.com/@MaceDev" target="_blank">youtube.com/@macedev</a><br>
-  <i class="bi bi-discord"></i> <a title="Discord" href="https://discordapp.com/users/885172882727133205" target="_blank">discord (@mace_dev)</a><br>
-  <i class="bi bi-telegram"></i> <a title="Telegram" href="https://t.me/mace_dev" target="_blank">t.me/mace_dev</a><br>
-  <!-- <i class="bi bi-tiktok"></i> <a title="TikTok" href="https://www.tiktok.com/@macestudiosgames" target="_blank">tiktok.com/@macestudiosgames</a><br> -->
-  <!-- <i class="bi bi-envelope-at-fill"></i> <a title="Email" href="mailto:bulava.place@gmail.com" target="_blank">bulava.place@gmail.com</a><br> -->
-  <p id="Footer-Copyright">© 2018-2034 Mace Dev (Mace Studios). All rights reserved.</p>
+  <div class="footer-div">
+    <h1 id="Section-Contact">Contact me:</h1>
+      <i class="bi bi-youtube"></i> <a title="YouTube" class="no-overflow" href="https://www.youtube.com/@MaceDev" target="_blank">youtube.com/@macedev</a><br>
+      <img src="assets/branding/bi-vk.svg" style="border-radius: 0px;"> <a title="VKontakte" class="no-overflow" href="https://vk.com/MaceDev" target="_blank">vk.com/MaceDev</a><br>
+      <i class="bi bi-discord"></i> <a title="Discord" class="no-overflow" href="https://discordapp.com/users/885172882727133205" target="_blank">discord (@mace_dev)</a><br>
+      <i class="bi bi-telegram"></i> <a title="Telegram" class="no-overflow" href="https://t.me/mace_dev" target="_blank">t.me/mace_dev</a><br>
+      <!-- <i class="bi bi-tiktok"></i> <a title="TikTok" class="no-overflow" href="https://www.tiktok.com/@macestudiosgames" target="_blank">tiktok.com/@macestudiosgames</a><br> -->
+      <!-- <i class="bi bi-envelope-at-fill"></i> <a title="Email" class="no-overflow" href="mailto:bulava.place@gmail.com" target="_blank">bulava.place@gmail.com</a><br> -->
+      <p id="Footer-Copyright">© 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved.</p>
+  </div>
 </footer>
 
 
