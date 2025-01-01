@@ -50,11 +50,11 @@ p {
 
 
 /* Links */
-a {
+* {
     color: var(--link);
     text-decoration: none;
 }
-a:hover {
+*:hover {
     text-decoration: underline;
 }
 header a, header a:hover {
