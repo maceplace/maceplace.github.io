@@ -9,10 +9,10 @@
 }
 * {
     border-radius: 12px;
-    user-select: none;
     font-size: 22px;
-    /*outline: none;*/
     max-width: 100%;
+    /* user-select: none; */
+    /*outline: none;*/
 }
 
 * {
