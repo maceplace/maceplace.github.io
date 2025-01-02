@@ -1,26 +1,48 @@
 const resources = {
     en: {
         translation: {
+            // Header idk
             "Hero Welcome": "Hello!",
-            "Hero description": "My name is Ilya Bulava and i am...<ul><li>Indie game developer 🎮</li><li>Certified programmer 💻</li><li>Aspiring composer 🎵</li><li>Pixel Artist 🎨</li></ul>",
 
-            "Section Projects": "My best projects",
-            "Section Music": "Music I've made",
+            // Hero desc
+            "Hero description": "My name is Ilya Bulava and I... <ul>" +
+            "<li><i class=\"bi bi-controller\"></i> Create <a target=\"_blank\" href=\"https://bulava.itch.io/\">videogames</a> </li>" +
+            // "<li><i class=\"bi bi-code-slash\"></i> Certified programmer </li>" +        (IT'S "TO BE ADDED" OKAY?? I ACTUALLY HAVE A CERTIFICATE)
+            "<li><i class=\"bi bi-music-note-list\"></i> Write <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ\">music</a> </li>"+
+            "<li><i class=\"bi bi-palette\"></i> Draw in <a target=\"_blank\" href=\"pixel\">pixel-art</a> </li>"+
+            "<li><i class=\"bi bi-globe2\"></i> Make <a target=\"_blank\" href=\"https://macestudios.ru/\">websites</a> </li>"+
+            "</ul>",
+
+            // Sections
+            "Section Projects": "My projects",
+            "Section Music": "My music",
             "Other Projects": "Other projects",
 
+            // Footer
             "Contact": "Contact me",
             "Footer-Copyright": "© 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved."
         }
     },
     ru: {
         translation: {
+            // Header idk
             "Hero Welcome": "Привет!",
-            "Hero description": "Меня зовут Илья Булава и я...<ul><li><i class=\"bi bi-controller\"></i> Инди <a target=\"_blank\" href=\"https://bulava.itch.io/\">разработчик игр</a> </li><li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li><li><i class=\"bi bi-music-note-list\"></i> Начинающий <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ&si=9KVATVSow4IrW_Ql\">композитор</a> </li><li><i class=\"bi bi-palette\"></i> Художник в пиксель-арте </li></ul>",
 
+            // Hero desc
+            "Hero description": "Меня зовут Илья Булава и я... <ul>" +
+            "<li><i class=\"bi bi-controller\"></i> Создаю <a target=\"_blank\" href=\"https://bulava.itch.io/\">видеоигры</a> </li>" +
+            // "<li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li>" +           (ДА У МЕНЯ ЕСТЬ ДИПЛОМ ПОТОМ СКРИНЫ ДОБАВЛЮ ОК????)
+            "<li><i class=\"bi bi-music-note-list\"></i> Пишу <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ\">музыку</a> </li>"+
+            "<li><i class=\"bi bi-palette\"></i> Рисую в <a target=\"_blank\" href=\"pixel\">пиксель-арте</a> </li>"+
+            "<li><i class=\"bi bi-globe2\"></i> Делаю <a target=\"_blank\" href=\"https://macestudios.ru/\">сайты</a> </li>"+
+            "</ul>",
+
+            // Sections
             "Section Projects": "Мои проекты",
             "Section Music": "Моя музыка",
             "Other Projects": "Другие проекты",
 
+            // Footer
             "Contact": "Связаться со мной",
             "Footer-Copyright": "© 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены."
         }

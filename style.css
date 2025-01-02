@@ -168,6 +168,9 @@ footer h1 {
     text-align: justify;
     font-size: 2em;
 }
+#Footer-Copyright {
+    color: rgba(255, 255, 255, 0.4);
+}
 
 
 
