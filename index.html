@@ -69,14 +69,7 @@
 <section class="hero">
   <div class="hero-item">
     <h1 id="hero-heading">Привет!</h1>
-    <p id="herodesc">Меня зовут Илья Булава и я...<br>
-      <!-- <ul>
-        <li><i class="bi bi-controller"></i> Создаю <a target="_blank" href="https://bulava.itch.io/">видеоигры</a> </li>
-        <li><i class="bi bi-music-note-list"></i> Пишу <a target="_blank" href="https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ">музыку</a> </li>
-        <li><i class="bi bi-palette"></i> Рисую в <a target="_blank" href="arts">пиксель-арте</a> </li>
-        <li><i class="bi bi-globe2"></i> Делаю <a target="_blank" href="https://macestudios.ru/">сайты</a> </li>
-      </ul> -->
-    </p>
+    <p id="herodesc">Меня зовут Илья Булава и я...<br></p>
   </div>
   <img class="hero-item hero-image" src="assets/HeroEverything.png">
 </section>
@@ -103,12 +96,7 @@
   </a>
 </section>
 
-
-<!-- Other Projects -->
-<!-- <section>
-  <h1 id="Section-OtherProjects">Другие проекты</h1>
-</section> -->
-
+<!-- My Projects 2 -->
 <section class="Section-OtherProjects">
 
   <!-- $Copy example -->
@@ -162,7 +150,7 @@
   <descriptive-project style="flex-basis: 500px;">
     <img src="assets/MyProjects/dem-icon.svg" class="descriptive-project-icon">
     <div class="name">
-      <p>Demotivator Maker</p>
+      <p>Demotivational Poster Maker</p>
       <p class="half-opacity">Simple small tool for quick creation of demotivational posters</p>
       <a href="https://macestudios.ru/mem" target="_blank"><button class="color-gray"> <i class="bi bi-box-arrow-up-right"></i> Open app </button></a>
     </div>
@@ -195,13 +183,14 @@
 </section>
 
 
-
+<!-- Old Projects -->
 <section>
   <h1 id="Section-OtherProjects-Old">Старые проекты</h1>
-  <p class="half-opacity" style="text-align: center; margin-top: 0;">(i am not responsible for the quality)</p>
+  <p class="half-opacity" style="text-align: center; margin-top: 0;">(They are really old and i am not responsible for the quality)
+  <button id="old-proj-toggle-btn"> <i class="bi bi-eye"></i> Show them anyway </button></p>
 </section>
 
-<section class="Section-OtherProjects">
+<section class="Section-OtherProjects" id="old-proj-section">
   <!-- YNPN -->
   <descriptive-project>
     <img src="assets/MyProjects/YNPNMiniIcon.png" class="descriptive-project-icon">
@@ -242,6 +231,31 @@
 
 </section>
 
+<!-- Hide section script -->
+<style>
+  #old-proj-section {
+      max-height: 0;
+      overflow: hidden; /* Prevent overflow when hidden */
+      transition: max-height 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+      padding: 0;
+  }
+</style>
+<script>
+  const button = document.getElementById('old-proj-toggle-btn');
+  const section = document.getElementById('old-proj-section');
+
+  button.onclick = function() {
+      if (section.style.maxHeight) {
+        section.style.maxHeight = null;
+        button.classList.remove('color-red');
+        button.innerHTML = '<i class="bi bi-eye"></i> Show'; // Update button text
+      } else {
+        section.style.maxHeight = section.scrollHeight + "px"; // Set max-height to scrollHeight
+        button.classList.add('color-red');
+        button.innerHTML = '<i class="bi bi-x-circle"></i> Hide'; // Update button text
+      }
+  };
+</script>
 
 
 <!-- Footer -->

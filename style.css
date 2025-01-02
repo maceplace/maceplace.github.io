@@ -89,6 +89,10 @@ button.color-black {
     color: white;
     box-shadow: 0 0.2em black;
 }
+button.color-red {
+    background: #f02636;
+    box-shadow: 0 0.2em #771525;
+}
 button.color-orange {
     background: #FF6C2D;
     box-shadow: 0 0.2em #772c15;
@@ -300,11 +304,11 @@ mini-section {
 .Section-OtherProjects {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    /* gap: 1em; */
 }
 descriptive-project {
     display: flex;
-    margin: 0 auto;
+    margin: 0.5em 0.5em;
     /* max-width: 1280px; */
     max-width: 100%;
 
