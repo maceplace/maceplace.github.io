@@ -23,7 +23,7 @@ const resources = {
 
             // Footer
             "Contact": "Contact me",
-            "Footer-Copyright": "© 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved."
+            "Footer-Copyright": "<i class=\"bi bi-c-circle\"></i> 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved."
         }
     },
     ru: {
@@ -50,7 +50,7 @@ const resources = {
 
             // Footer
             "Contact": "Связаться со мной",
-            "Footer-Copyright": "© 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены."
+            "Footer-Copyright": "<i class=\"bi bi-c-circle\"></i> 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены."
         }
     }
 };

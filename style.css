@@ -2,10 +2,8 @@
 :root {
     --primary: #4951FF;
     --link: #3abaff;
+    --dark: #1b1f63;
     --background: #1B1C2E;
-    --SyrupBg1: #1e1a44;
-    --SyrupBg2: #14213a;
-    --SyrupBgM: #25242c00;
 }
 * {
     border-radius: 12px;
@@ -65,8 +63,8 @@ header a, header a:hover {
 
 /* Buttons */
 button {
-    background: var(--link);
-    box-shadow: 0 0.2em var(--primary);
+    background: var(--primary);
+    box-shadow: 0 0.2em var(--dark);
     transform: translateY(-0.2em);
 
     color: #fff;
@@ -78,38 +76,69 @@ button {
     border: none;
     border-radius: 16px;
 
-    transition: 0.2s;
+    transition: 0.15s;
+    text-decoration: none;
 }
+button.color-white {
+    background: white;
+    color: black;
+    box-shadow: 0 0.2em #bbb;
+}
+button.color-black {
+    background: #111;
+    color: white;
+    box-shadow: 0 0.2em black;
+}
+button.color-orange {
+    background: #FF6C2D;
+    box-shadow: 0 0.2em #772c15;
+}
+button.color-gray {
+    background: #6e6f79;
+    box-shadow: 0 0.2em #28282c;
+}
+button.color-android {
+    background: #34a853;
+    box-shadow: 0 0.2em #1d5f2f;
+}
+button.color-win {
+    background: #0683e6;
+    box-shadow: 0 0.2em #043b8f;
+}
+
 button:hover, button:active {
-    background: var(--primary);
-    box-shadow: 0 0 var(--primary);
+    box-shadow: 0 0 #0000;
     transform: translateY(0);
     cursor: pointer;
 }
 button:disabled {
-    background: #64667e;
+    background: #6e6f79;
     box-shadow: 0 0 #393847;
     transform: translateY(0);
     text-decoration: line-through;
     cursor: no-drop;
+}
+a button {
+    user-select: none;
 }
 
 
 
 /* Header */
 header { 
-    height: 100px;
+    min-height: 100px;
     padding: 30px 30px;
     display: flex;
     justify-content: flex-start;
-    gap: 20px;
+    flex-wrap: wrap;
 }
 .header-logo {
-    display: contents;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .header-logo-text {
     font-size: 2em;
-    margin: auto 0;
+    margin: auto 20px;
 }
 
 .header-logo-icon img {
@@ -120,9 +149,16 @@ header {
 }
 
 .header-socials {
-    margin: auto 0 auto auto;
+    margin: auto;
+    margin-right: 0;
     height: 100px;
 }
+@media (max-width: 535px) {
+    .header-socials {
+        margin: auto;
+    }
+}
+
 .header-item {
     display: inline-block; /* Позволяет задать размеры */
     text-decoration: none; /* Убирает подчеркивание */
@@ -269,7 +305,8 @@ mini-section {
 descriptive-project {
     display: flex;
     margin: 0 auto;
-    max-width: 1280px;
+    /* max-width: 1280px; */
+    max-width: 100%;
 
     flex-shrink: 0;
     flex-grow: 1;
@@ -299,10 +336,7 @@ descriptive-project div * {
     margin: 0;
 }
 descriptive-project button {
-    background: var(--primary);
-    box-shadow: 0 0.2em #1b1f63;
-
-    margin: calc(0.2em + 8px) 0 0 0;
+    margin: calc(0.2em + 8px) 0.5em 0 0;
     padding: 6px 16px;
     border-radius: 16px;
 }
