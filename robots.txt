@@ -1,9 +1,0 @@
-User-agent: * # указывает, для каких роботов установлены директивы
-
-Disallow: /bonus/ # запрещает ссылки из "Корзины с товарами".
-
-Disallow: /admin/ # запрещает ссылки из панели администратора
-
-Sitemap: http://macestudios.ru/sitemap # указывает роботу на файл Sitemap для сайта
-
-Clean-param: ref /some_dir/get_book.pl
