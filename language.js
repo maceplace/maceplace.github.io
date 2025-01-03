@@ -1,79 +1,70 @@
-const resources = {
-    en: {
-        translation: {
-            // Header idk
-            "Hero Welcome": "Hello!",
+// Load the language resources from JSON files
+const loadResources = async () => {
+    const en = await fetch('languages/en.json').then(response => response.json());
+    const ru = await fetch('languages/ru.json').then(response => response.json());
 
-            // Hero desc
-            "Hero description": "My name is Ilya Bulava and I... <ul>" +
-            "<li><i class=\"bi bi-controller\"></i> Create <a target=\"_blank\" href=\"https://bulava.itch.io/\">videogames</a> </li>" +
-            // "<li><i class=\"bi bi-code-slash\"></i> Certified programmer </li>" +        (IT'S "TO BE ADDED" OKAY?? I ACTUALLY HAVE A CERTIFICATE)
-            "<li><i class=\"bi bi-music-note-list\"></i> Write <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ\">music</a> </li>"+
-            "<li><i class=\"bi bi-palette\"></i> Draw in <a target=\"_blank\" href=\"arts\">pixel-art</a> </li>"+
-            "<li><i class=\"bi bi-globe2\"></i> Make <a target=\"_blank\" href=\"https://macestudios.ru/\">websites</a> </li>"+
-            "</ul>",
-
-            // Sections
-            "Section Projects": "My projects",
-            "Section Music": "My music",
-            "Other Projects": "Other projects",
-
-            "Other Projects New Small": "New small projects",
-            "Other Projects Old": "Old projects",
-
-            // Footer
-            "Contact": "Contact me",
-            "Footer-Copyright": "<i class=\"bi bi-c-circle\"></i> 2018-2038 Mace Dev (prev.: Mace Studios). All rights reserved."
-        }
-    },
-    ru: {
-        translation: {
-            // Header idk
-            "Hero Welcome": "Привет!",
-
-            // Hero desc
-            "Hero description": "Меня зовут Илья Булава и я... <ul>" +
-            "<li><i class=\"bi bi-controller\"></i> Создаю <a target=\"_blank\" href=\"https://bulava.itch.io/\">видеоигры</a> </li>" +
-            // "<li><i class=\"bi bi-code-slash\"></i> Дипломированный программист </li>" +           (ДА У МЕНЯ ЕСТЬ ДИПЛОМ ПОТОМ СКРИНЫ ДОБАВЛЮ ОК????)
-            "<li><i class=\"bi bi-music-note-list\"></i> Пишу <a target=\"_blank\" href=\"https://youtube.com/playlist?list=PLax8LqpZxaCgwlsobQ6Yx-P-wP2PMGFCQ\">музыку</a> </li>"+
-            "<li><i class=\"bi bi-palette\"></i> Рисую в <a target=\"_blank\" href=\"arts\">пиксель-арте</a> </li>"+
-            "<li><i class=\"bi bi-globe2\"></i> Делаю <a target=\"_blank\" href=\"https://macestudios.ru/\">сайты</a> </li>"+
-            "</ul>",
-
-            // Sections
-            "Section Projects": "Мои проекты",
-            "Section Music": "Моя музыка",
-            "Other Projects": "Другие проекты",
-
-            "Other Projects New Small": "Новые маленькие проекты",
-            "Other Projects Old": "Старые проекты",
-
-            // Footer
-            "Contact": "Связаться со мной",
-            "Footer-Copyright": "<i class=\"bi bi-c-circle\"></i> 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены."
-        }
-    }
+    return {
+        en: { translation: en },
+        ru: { translation: ru }
+    };
 };
 
-i18next.use(i18nextBrowserLanguageDetector).init({
-    resources,
-    fallbackLng: 'en',
-    debug: false
-}, function(err, t) {
-    if (err) return console.error(err);
-    updateContent();
+
+loadResources().then(resources => {
+    i18next.use(i18nextBrowserLanguageDetector).init({
+        resources,
+        fallbackLng: 'en',
+        debug: false
+    }, function(err, t) {
+        if (err) return console.error(err);
+        updateContent();
+    });
 });
 
+
+function setElementText(id, text, isHTML = false) {
+    try {
+        const element = document.getElementById(id);
+        if (element) {
+            if (isHTML) {
+                element.innerHTML = text;
+            } else {
+                element.innerText = text;
+            }
+        } else {
+            console.warn(`Элемент с id '${id}' не найден.`);
+        }
+    } catch (error) {
+        console.error(`Ошибка при установке текста для '${id}':`, error);
+    }
+}
+
+
 function updateContent() {
-    document.getElementById('hero-heading').innerText = i18next.t('Hero Welcome');
-    document.getElementById('herodesc').innerHTML = i18next.t('Hero description');
+    setElementText('Hero-Heading', i18next.t('Hero Welcome'));
+    setElementText('Hero-Desc', i18next.t('Hero Description'), true);
+    
 
-    document.getElementById('Section-Projects').innerText = i18next.t('Section Projects');
-    document.getElementById('Section-Music').innerText = i18next.t('Section Music');
-    document.getElementById('Section-OtherProjects').innerText = i18next.t('Other Projects');
-    document.getElementById('Section-OtherProjects-NewSmall').innerText = i18next.t('Other Projects New Small');
-    document.getElementById('Section-OtherProjects-Old').innerText = i18next.t('Other Projects Old');
+    setElementText('Section-Projects', i18next.t('Section Projects'));
+    setElementText('Section-Music', i18next.t('Section Music'));
 
-    document.getElementById('Section-Contact').innerText = i18next.t('Contact');
-    document.getElementById('Footer-Copyright').innerText = i18next.t('Footer-Copyright');
+    setElementText('Section-OtherProjects', i18next.t('Other Projects'));
+    setElementText('Section-OtherProjects-NewSmall', i18next.t('Other Projects New Small'));
+
+    setElementText('Section-OtherProjects-Old', i18next.t('Other Projects Old'));
+    setElementText('Old-Proj-Warn', i18next.t('Old Proj Warn'));
+    setElementText('Old-Proj-ToggleButton', '<i class="bi bi-eye"></i> ' + i18next.t('Old Proj ToggleButton Show'), true);
+    
+
+    setElementText('Game-CUG-Desc', i18next.t('Game-CUG-Desc'));
+    setElementText('Game-DF-Desc', i18next.t('Game-DF-Desc'));
+    setElementText('Game-NSN-Desc', i18next.t('Game-NSN-Desc'));
+    setElementText('Game-Dem-Name', i18next.t('Game-Dem-Name'));
+    setElementText('Game-Dem-Desc', i18next.t('Game-Dem-Desc'));
+    setElementText('Game-Cards-Name', i18next.t('Game-Cards-Name'));
+    setElementText('Game-Cards-Desc', i18next.t('Game-Cards-Desc'));
+
+
+    setElementText('Section-Contact', i18next.t('Contact'));
+    setElementText('Footer-Copyright', i18next.t('Footer Copyright'), true);
 }

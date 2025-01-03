@@ -32,7 +32,8 @@
 <!-- Connect Style -->
 <link rel="stylesheet" href="/style.css">
 
-<!-- Language Script -->
+<!-- Scripts -->
+<script src="/script.js"></script>
 <script src="https://unpkg.com/i18next@21.6.5/dist/umd/i18next.min.js"></script>
 <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
 <script src="/language.js" defer></script>
@@ -68,8 +69,8 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-item">
-    <h1 id="hero-heading">Привет!</h1>
-    <p id="herodesc">Меня зовут Илья Булава и я...<br></p>
+    <h1 id="Hero-Heading" style="text-align: left;">Привет!</h1>
+    <p id="Hero-Desc">Меня зовут Илья Булава и я...<br></p>
   </div>
   <img class="hero-item hero-image" src="assets/HeroEverything.png">
 </section>
@@ -114,7 +115,7 @@
     <img src="assets/MyProjects/СUgIcon.png" class="descriptive-project-icon">
     <div class="name">
       <p>Cookie Ungain</p>
-      <p class="half-opacity">A two-player local vs game, where one player controls the keyboard and tries to collect cookies in a time limit, while the other player uses the mouse to stop them. (Game is in early demo)</p>
+      <p class="half-opacity" id="Game-CUG-Desc">A two-player local vs game, where one player controls the keyboard and tries to collect cookies in a time limit, while the other player uses the mouse to stop them. (Game is in early demo)</p>
       <a href="https://bulava.itch.io/cookie-ungain" target="_blank"><button class="color-orange"> <i class="bi bi-controller"></i> Play on itch.io</button></a>
     </div>
   </descriptive-project>
@@ -125,7 +126,7 @@
     <img src="assets/MyProjects/DfIcon.png" class="descriptive-project-icon">
     <div class="name">
       <p>Dynamic Force</p>
-      <p class="half-opacity">Top-down multiplayer racing game</p>
+      <p class="half-opacity" id="Game-DF-Desc">Top-down multiplayer racing game</p>
       <a href="https://www.newgrounds.com/portal/view/885110" target="_blank"><button> <i class="bi bi-globe2"></i> Play on newgrounds </button></a> <br>
       <a href="https://drive.google.com/uc?export=download&id=1EuqeheZdKDTZlt2oRSrwHc7cnBfu4h0P" target="_blank"><button class="color-android"> <i class="bi bi-android"></i> Android (.apk) </button></a>
       <a href="https://apps.rustore.ru/app/com.macestudios.dynamicforce" target="_blank"><button class="color-android"> <i class="bi bi-android" target="_blank"></i> Android (RuStore) </button></a>
@@ -137,7 +138,7 @@
     <img src="assets/MyProjects/NSNIcon.png" class="descriptive-project-icon">
     <div class="name">
       <p>New Shooter.net</p>
-      <p class="half-opacity"> FPS retro-styled horror (Unfinished) </p>
+      <p class="half-opacity" id="Game-NSN-Desc"> FPS retro-styled horror (Unfinished) </p>
       <a href="https://drive.google.com/uc?export=download&id=1-21wR_GS9rXESeX8DGmfAe9hDKWOzfYj" target="_blank">
         <button> <i class="bi bi-download"></i> Download </button>
       </a>
@@ -150,8 +151,8 @@
   <descriptive-project style="flex-basis: 500px;">
     <img src="assets/MyProjects/dem-icon.svg" class="descriptive-project-icon">
     <div class="name">
-      <p>Demotivational Poster Maker</p>
-      <p class="half-opacity">Simple small tool for quick creation of demotivational posters</p>
+      <p id="Game-Dem-Name">Demotivational Poster Maker</p>
+      <p class="half-opacity" id="Game-Dem-Desc">Simple small tool for quick creation of demotivational posters</p>
       <a href="https://macestudios.ru/mem" target="_blank"><button class="color-gray"> <i class="bi bi-box-arrow-up-right"></i> Open app </button></a>
     </div>
   </descriptive-project>
@@ -160,8 +161,8 @@
   <descriptive-project style="flex-basis: 500px;">
     <img src="https://macestudios.ru/zevki-cards/cards/CardTemplate.svg" class="descriptive-project-icon">
     <div class="name">
-      <p>Cards</p>
-      <p class="half-opacity">The cards of my friends and other people I know</p>
+      <p id="Game-Cards-Name">Cards</p>
+      <p class="half-opacity" id="Game-Cards-Desc">The cards of my friends and other people I know</p>
       <a href="https://macestudios.ru/zevki-cards" target="_blank"><button class="color-gray"> <i class="bi bi-box-arrow-up-right"></i> View </button></a>
     </div>
   </descriptive-project>
@@ -186,11 +187,11 @@
 <!-- Old Projects -->
 <section>
   <h1 id="Section-OtherProjects-Old">Старые проекты</h1>
-  <p class="half-opacity" style="text-align: center; margin-top: 0;">(They are really old and i am not responsible for the quality)
-  <button id="old-proj-toggle-btn"> <i class="bi bi-eye"></i> Show them anyway </button></p>
+  <p class="half-opacity" style="text-align: center; margin: 0;" id="Old-Proj-Warn">(They are really old and i am not responsible for the quality)</p>
+  <p style="text-align: center; margin-top: 0;"><button id="Old-Proj-ToggleButton"> <i class="bi bi-eye"></i> Show them anyway </button></p>
 </section>
 
-<section class="Section-OtherProjects" id="old-proj-section">
+<section class="Section-OtherProjects" id="Old-Proj-Section">
   <!-- YNPN -->
   <descriptive-project>
     <img src="assets/MyProjects/YNPNMiniIcon.png" class="descriptive-project-icon">
@@ -231,44 +232,39 @@
 
 </section>
 
-<!-- Hide section script -->
-<style>
-  #old-proj-section {
-      max-height: 0;
-      overflow: hidden; /* Prevent overflow when hidden */
-      transition: max-height 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-      padding: 0;
-  }
-</style>
+<!-- Hidable Section Script -->
 <script>
-  const button = document.getElementById('old-proj-toggle-btn');
-  const section = document.getElementById('old-proj-section');
+  const button = document.getElementById('Old-Proj-ToggleButton');
+  const section = document.getElementById('Old-Proj-Section');
 
   button.onclick = function() {
       if (section.style.maxHeight) {
         section.style.maxHeight = null;
         button.classList.remove('color-red');
-        button.innerHTML = '<i class="bi bi-eye"></i> Show'; // Update button text
+        setElementText('Old-Proj-ToggleButton', '<i class="bi bi-eye"></i> ' + i18next.t('Old Proj ToggleButton Show'), true);
+        // button.innerHTML = '<i class="bi bi-eye"></i> Show'; // Update button text
       } else {
         section.style.maxHeight = section.scrollHeight + "px"; // Set max-height to scrollHeight
         button.classList.add('color-red');
-        button.innerHTML = '<i class="bi bi-x-circle"></i> Hide'; // Update button text
+        setElementText('Old-Proj-ToggleButton', '<i class="bi bi-x-circle"></i> ' + i18next.t('Old Proj ToggleButton Hide'), true);
+        // button.inner = '<i class="bi bi-x-circle"></i> Hide'; // Update button text
       }
   };
 </script>
+
 
 
 <!-- Footer -->
 <footer>
   <div class="footer-div">
     <h1 id="Section-Contact">Связаться со мной</h1>
-      <img src="assets/branding/bi-vk.svg" class="custom-icon"> <a title="VKontakte" class="no-overflow" href="https://vk.com/mace_dev" target="_blank">vk.com/mace_dev</a><br>
+      <img src="assets/branding/bi-vk.svg" class="bi bi-custom-icon custom-icon"> <a title="VKontakte" class="no-overflow" href="https://vk.com/mace_dev" target="_blank">vk.com/mace_dev</a><br>
       <i class="bi bi-telegram"></i> <a title="Telegram" class="no-overflow" href="https://t.me/mace_dev" target="_blank">t.me/mace_dev</a><br>
       <i class="bi bi-discord"></i> <a title="Discord" class="no-overflow" href="https://discordapp.com/users/885172882727133205" target="_blank">discord (@mace_dev)</a><br>
       <!-- <i class="bi bi-tiktok"></i> <a title="TikTok" class="no-overflow" href="https://www.tiktok.com/@macestudiosgames" target="_blank">tiktok.com/@macestudiosgames</a><br> -->
       <!-- <i class="bi bi-envelope-at-fill"></i> <a title="Mail" class="no-overflow" href="mailto:bulava.place@gmail.com" target="_blank">bulava.place@gmail.com</a><br> -->
-      <i class="bi bi-envelope-at-fill"></i> <a title="Mail" class="no-overflow" href="mailto:i@macestudios.ru" target="_blank">i@macestudios.ru</a><br>
-      <p id="Footer-Copyright"> <i class="bi bi-c-circle"></i> 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены.</p>
+      <i class="bi bi-envelope-at-fill"></i> <a title="E-mail" class="no-overflow" href="mailto:i@macestudios.ru" target="_blank">i@macestudios.ru</a><br>
+      <p id="Footer-Copyright"> <i class="bi bi-c-circle"></i> 2018-2038 Mace Dev (ранее: Mace Studios). Все права защищены. </p>
   </div>
 </footer>
 
