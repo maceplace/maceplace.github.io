@@ -1,9 +1,27 @@
 /* Whole page, and main stuff */
 :root {
-    --primary: #4951FF;
+    --mace: #4951FF;
     --link: #3abaff;
-    --dark: #1b1f63;
+    --dark: #2b308b;
     --background: #1B1C2E;
+
+    --red: #FA273C;
+    --orange: #ff7a1c;
+    --yellow: #FFC320;
+    --green: #17cf48;
+    --blue: #0D9AFF;
+    --purple: #AD43FD;
+    --pink: #E44EA6;
+    --gray: #616478;
+
+    --red-dark: #831B29;
+    --orange-dark: #864419;
+    --yellow-dark: #86691B;
+    --green-dark: #126f2f;
+    --blue-dark: #0d548b;
+    --purple-dark: #5D298A;
+    --pink-dark: #782e5e;
+    --gray-dark: #373947;
 }
 * {
     border-radius: 12px;
@@ -76,7 +94,7 @@ header a, header a:hover {
 
 /* Buttons */
 button {
-    background: var(--primary);
+    background: var(--mace);
     box-shadow: 0 0.2em var(--dark);
     transform: translateY(-0.2em);
 
@@ -102,25 +120,42 @@ button.color-black {
     box-shadow: 0 0.2em black;
 }
 button.color-red {
-    background: #f02636;
-    box-shadow: 0 0.2em #771525;
+    background: var(--red);
+    box-shadow: 0 0.2em var(--red-dark);
 }
 button.color-orange {
-    background: #FF6C2D;
-    box-shadow: 0 0.2em #772c15;
+    background: var(--orange);
+    box-shadow: 0 0.2em var(--orange-dark);
+    text-shadow: 0px 2px var(--orange-dark);
+}
+button.color-yellow {
+    background: var(--yellow);
+    box-shadow: 0 0.2em var(--yellow-dark);
+    text-shadow: 0px 2px var(--yellow-dark);
+}
+button.color-green {
+    background: var(--green);
+    box-shadow: 0 0.2em var(--green-dark);
+    text-shadow: 0px 2px var(--green-dark);
+}
+button.color-blue {
+    background: var(--blue);
+    box-shadow: 0 0.2em var(--blue-dark);
+}
+button.color-purple {
+    background: var(--purple);
+    box-shadow: 0 0.2em var(--purple-dark);
+}
+button.color-pink {
+    background: var(--pink);
+    box-shadow: 0 0.2em var(--pink-dark);
+    text-shadow: 0px 2px var(--pink-dark);
 }
 button.color-gray {
-    background: #6e6f79;
-    box-shadow: 0 0.2em #28282c;
+    background: var(--gray);
+    box-shadow: 0 0.2em var(--gray-dark);
 }
-button.color-android {
-    background: #34a853;
-    box-shadow: 0 0.2em #1d5f2f;
-}
-button.color-win {
-    background: #0683e6;
-    box-shadow: 0 0.2em #043b8f;
-}
+
 
 button:hover, button:active {
     box-shadow: 0 0 #0000;
@@ -232,6 +267,8 @@ footer h1 {
 .custom-icon {
     border-radius: 0px;
     user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
     color: white;
     height: 1em;
 }
